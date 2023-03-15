@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@layer components {
+  .rtl-text {
+    direction: rtl;
+  }
+}
+
+body {
+  @apply bg-[#F9F8F5];
+}
+.some {
+  stroke: black !important;
+  fill: black !important;
+}
