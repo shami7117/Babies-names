@@ -84,23 +84,12 @@ export default function Finish() {
 
   const [Showmore, setShowmore] = useState(false);
   const names = JSON.stringify(SelectedNames);
-  useEffect(() => {
-    setcurrent(window.location.href + names);
-  }, []);
 
   // router.query.names = names;
   // router.push(router);
-  // router.push({ href: "/", query: { names: names } });
-  //  const [Showmore, setShowmore] = useState(false);
-  //  useEffect(() => {
-  //    let names = JSON.stringify(SelectedNames);
-  //    setcurrent(window.location.href + names);
-  //    console.log(SelectedNames);
-  //  }, []);
-  // const [Showmore, setShowmore] = useState(false);
-  // useEffect(() => {
-  //   setcurrent(window.location.href);
-  // }, []);
+  useEffect(() => {
+    setcurrent(`${window.location.href + names}`);
+  }, []);
 
   const UnselectName = (baby: BabyInterface) => {
     if (SelectedNames.includes(baby)) {
@@ -109,8 +98,6 @@ export default function Finish() {
     }
   };
 
-  // const { name } = SelectedNames;
-  console.log(SelectedNames);
   return (
     <div className="relative  z-10">
       <Head>
@@ -221,11 +208,6 @@ export default function Finish() {
                   <NameHolderSelected key={i} baby={baby} />
                 </button>
               ))}
-              {/* {SelectedNames?.map((baby: BabyInterface, i: number) => (
-                <button key={i} onClick={() => UnselectName(baby)}>
-                  <NameHolderSelected key={i} baby={baby} />
-                </button>
-              ))} */}
             </div>
             <div
               className={`flex my-2 ${
@@ -258,7 +240,7 @@ export default function Finish() {
           alt="fish"
         />
       </div>
-      <div className=" hidden sm:flex absolute left-[15%] md:left-[0%]  xl:left-[5%]  top-[100%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
+      <div className=" hidden sm:flex absolute left-[15%] md:left-[0%]  xl:left-[5%]  top-[100%]  md:top-[30%] mt-5   mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
         <Ad />
       </div>
       <div className="hidden sm:flex absolute  right-[13%] md:right-[0%]  xl:right-[5%]  top-[120%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">

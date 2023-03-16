@@ -124,15 +124,14 @@ export default function Pick(req: NextApiRequest) {
           setTimeout(() => {
             setShow(false);
           }, 5000);
-
-          router.push(`/finish?name=${params}`);
         }
       }
     } catch (err) {
       setShow(true);
       setTimeout(() => {
         setShow(false);
-        router.push("/finish");
+        const names = JSON.stringify(SelectedNames);
+        router.push(`/finish?name=${names}`);
       }, 5000);
     }
   };
@@ -310,7 +309,7 @@ export default function Pick(req: NextApiRequest) {
       <div className=" hidden sm:flex absolute left-[15%] md:left-[0%]  xl:left-[5%]  top-[100%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
         <Ad />
       </div>
-      <div className="hidden sm:flex absolute  right-[13%] md:right-[0%]  xl:right-[5%]  top-[120%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
+      <div className="hidden sm:flex absolute  right-[15%] md:right-[0%]  xl:right-[5%]  top-[120%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
         <Ad />
       </div>
     </div>
