@@ -42,7 +42,6 @@ function SelectArea({ filterednames, SearchName }: AreaProps) {
       }
     };
   });
-
   return (
     <>
       <div
@@ -53,11 +52,11 @@ function SelectArea({ filterednames, SearchName }: AreaProps) {
       >
         {filterednames
           ?.slice(0, cursor)
-          .map((baby: BabyInterface, i: number, event: any) => (
+          .map((baby: BabyInterface, i: number) => (
             <NameHolder key={i} baby={baby} />
           ))}
+
         {filterednames.length == 0 && <NotFoundMessage />}
-        {/* {storedNames} */}
       </div>
       <div
         className={`py-4 flex ${Showmore ? "" : "invisible"} ${

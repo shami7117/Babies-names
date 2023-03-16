@@ -79,24 +79,28 @@ export default function Finish() {
       );
     }
   };
+
+  // const router = useRouter();
+
   const [Showmore, setShowmore] = useState(false);
+  const names = JSON.stringify(SelectedNames);
   useEffect(() => {
-    const names = JSON.stringify(SelectedNames);
-    setcurrent(
-      window.location.href +
-        SelectedNames.map(() => {
-          return (
-            <div className="pb-4  flex flex-wrap min-h-[80px]">
-              {SelectedNames?.map((baby: BabyInterface, i: number) => (
-                <button key={i} onClick={() => UnselectName(baby)}>
-                  <NameHolderSelected key={i} baby={baby} />
-                </button>
-              ))}
-            </div>
-          );
-        })
-    );
+    setcurrent(window.location.href + names);
   }, []);
+
+  // router.query.names = names;
+  // router.push(router);
+  // router.push({ href: "/", query: { names: names } });
+  //  const [Showmore, setShowmore] = useState(false);
+  //  useEffect(() => {
+  //    let names = JSON.stringify(SelectedNames);
+  //    setcurrent(window.location.href + names);
+  //    console.log(SelectedNames);
+  //  }, []);
+  // const [Showmore, setShowmore] = useState(false);
+  // useEffect(() => {
+  //   setcurrent(window.location.href);
+  // }, []);
 
   const UnselectName = (baby: BabyInterface) => {
     if (SelectedNames.includes(baby)) {
@@ -105,10 +109,8 @@ export default function Finish() {
     }
   };
 
-  // useEffect(() => {
-  //   localStorage.setItem("names", JSON.stringify(SelectedNames));
-  // }, [SelectedNames]);
-
+  // const { name } = SelectedNames;
+  console.log(SelectedNames);
   return (
     <div className="relative  z-10">
       <Head>
@@ -120,7 +122,7 @@ export default function Finish() {
       <Navbar />
       <ToastContainer />
 
-      <div className="mx-auto container px-[220px] lg:px-[320px] pt-16 text-center   flex  flex-col justify-center items-center max-w-[1900px]">
+      <div className="mx-auto container px-[50px] sm:px-[100px] md:px-[220px] lg:px-[320px] pt-16 text-center   flex  flex-col justify-center items-center max-w-[1900px]">
         {show && <FinishModal closeModal={() => setShow(false)} />}
 
         <h1 className="font-poppins text-xl md:text-xl: text-[#0D0441]">
@@ -214,16 +216,16 @@ export default function Finish() {
               </span>
             </CopyToClipboard>
             <div className="pb-4  flex flex-wrap min-h-[80px]">
-              {/* {SelectedNames?.map((baby: BabyInterface, i: number) => (
-                <button key={i} onClick={() => UnselectName(baby)}>
-                  <NameHolderSelected key={i} baby={baby} />
-                </button>
-              ))} */}
               {SelectedNames?.map((baby: BabyInterface, i: number) => (
                 <button key={i} onClick={() => UnselectName(baby)}>
                   <NameHolderSelected key={i} baby={baby} />
                 </button>
               ))}
+              {/* {SelectedNames?.map((baby: BabyInterface, i: number) => (
+                <button key={i} onClick={() => UnselectName(baby)}>
+                  <NameHolderSelected key={i} baby={baby} />
+                </button>
+              ))} */}
             </div>
             <div
               className={`flex my-2 ${
@@ -256,10 +258,10 @@ export default function Finish() {
           alt="fish"
         />
       </div>
-      <div className="absolute left-[5%] top-[30%]     w-auto      min-w-[150px] min-h-[500px] my-10 bg-gray-200">
+      <div className=" hidden sm:flex absolute left-[15%] md:left-[0%]  xl:left-[5%]  top-[100%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
         <Ad />
       </div>
-      <div className="min-w-[150px] absolute right-[5%] top-[30%]  w-auto min-h-[500px] my-10 bg-gray-200">
+      <div className="hidden sm:flex absolute  right-[13%] md:right-[0%]  xl:right-[5%]  top-[120%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
         <Ad />
       </div>
     </div>

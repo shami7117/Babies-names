@@ -158,7 +158,7 @@ export default function Pick(req: NextApiRequest) {
 
         {/* Content Container */}
         <div className="flex  w-full">
-          <div className="   px-4 px-[150px] xl:px-[320px] ">
+          <div className="   px-4 md:px-[150px] xl:px-[320px] ">
             <div
               className={`flex w-full flex-col ${
                 locale === "en" ? "xl:flex-row" : "xl:flex-row-reverse"
@@ -258,7 +258,7 @@ export default function Pick(req: NextApiRequest) {
               </div>
 
               <div
-                className={`fixed  bottom-0 bg-white sm:mt-12   sm:border-t-[3px] border-dashed p-4 sm:p-0 inset-x-0  sm:static sm:flex ${
+                className={`fixed  bottom-0 bg-white mt-12   border-t-[3px] border-dashed p-4 sm:p-0 inset-x-0  sm:static sm:flex ${
                   locale === "en" ? "md:flex-row-reverse" : "md:flex-row"
                 } `}
               >
@@ -307,10 +307,10 @@ export default function Pick(req: NextApiRequest) {
         className="absolute z-[-1] right-[6%]  hidden md:block top-[70%] "
         alt="lines"
       />
-      <div className="absolute left-[0%] xl:left-[5%] top-[30%]    mx-4 md:mx-0 md:w-auto      min-w-[150px] min-h-[500px] my-10 bg-gray-200">
+      <div className=" hidden sm:flex absolute left-[15%] md:left-[0%]  xl:left-[5%]  top-[100%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
         <Ad />
       </div>
-      <div className="min-w-[150px] absolute right-[0%] xl:right-[5%] top-[30%] mx-4 md:mx-0 md:w-auto min-h-[500px] my-10 bg-gray-200">
+      <div className="hidden sm:flex absolute  right-[13%] md:right-[0%]  xl:right-[5%]  top-[120%]  md:top-[30%]    mx-4 md:mx-0 md:w-auto min-h-[150px]  min-w-[500px]    md:min-w-[150px] md:min-h-[500px] my-10 bg-gray-200">
         <Ad />
       </div>
     </div>
